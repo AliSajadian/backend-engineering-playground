@@ -145,6 +145,69 @@ Each implementation follows the same algorithm while using language-specific idi
 
 ---
 
+## Language Comparison
+
+Although the algorithm is identical in every implementation, each language offers different syntax, standard libraries, and idioms.
+
+| Concept          | Python                | TypeScript                   | C#                             | Go                         |
+| ---------------- | --------------------- | ---------------------------- | ------------------------------ | -------------------------- |
+| Hash Set         | `set[int]`            | `Set<number>`                | `HashSet<int>`                 | `map[int]struct{}`         |
+| Loop             | `for num in nums_set` | `for (const num of numsSet)` | `foreach (var num in numsSet)` | `for num := range numsSet` |
+| Membership Test  | `num in nums_set`     | `numsSet.has(num)`           | `numsSet.Contains(num)`        | `_, ok := numsSet[num]`    |
+| Maximum          | `max(a, b)`           | `Math.max(a, b)`             | `Math.Max(a, b)`               | `if current > max { ... }` |
+| Dictionary / Map | `dict`                | `Map<K, V>`                  | `Dictionary<TKey,TValue>`      | `map[K]V`                  |
+| Time Complexity  | O(n)                  | O(n)                         | O(n)                           | O(n)                       |
+| Space Complexity | O(n)                  | O(n)                         | O(n)                           | O(n)                       |
+
+---
+
+## Language Notes
+
+### Python
+
+* Built-in `set` provides concise and expressive syntax.
+* Membership checks are clean with `in`.
+* Ideal for interview speed and readability.
+
+### TypeScript
+
+* Uses the ES6 `Set` collection.
+* Membership checks use `.has()`.
+* Common choice for Node.js backend development and NestJS.
+
+### C#
+
+* Uses `HashSet<T>` from `System.Collections.Generic`.
+* Strong typing and excellent performance.
+* Common in enterprise backend applications with ASP.NET Core.
+
+### Go
+
+* Go has no built-in set type.
+* A set is commonly implemented using:
+
+```go
+map[int]struct{}
+```
+
+where `struct{}` occupies zero bytes, making it the idiomatic and memory-efficient choice.
+
+---
+
+## Common Algorithm
+
+Every implementation follows the same four steps:
+
+1. Store all numbers in a Hash Set.
+2. Iterate through each unique number.
+3. Start a sequence only if the previous number (`num - 1`) does not exist.
+4. Count consecutive numbers while updating the maximum sequence length.
+
+The only differences between implementations are the language-specific collection types and syntax. The algorithm, complexity, and reasoning remain identical across all four languages.
+
+
+---
+
 # Interview Topics
 
 This problem tests knowledge of:
