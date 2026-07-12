@@ -47,5 +47,4 @@ def top_k_frequent_bucket_sort(nums: list[int], k: int) -> list[int]:
 
 if __name__ == "__main__":
     numbers_list = [4, 4, 4, 4]
-
     print(top_k_frequent_bucket_sort(numbers_list, 3))

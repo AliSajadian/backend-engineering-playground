@@ -25,6 +25,9 @@ def maxArea(height: list[int]) -> int:
 
 
 if __name__ == "__main__":
-    numbers_list = [1,8,6,2,5,4,8,3,7]
+    # numbers_list = [1,8,6,2,5,4,8,3,7]
 
-    print(maxArea(numbers_list))
+    # print(maxArea(numbers_list))
+
+    heights = [2,1,5,6,2,3]
+    print(maxArea(heights))
