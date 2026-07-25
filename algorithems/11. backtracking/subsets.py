@@ -32,12 +32,12 @@ def subsets_iterative(nums: list[int]) -> list[list[int]]:
     Start with empty set, add each number to all existing subsets.
     """
     result = [[]]
-    
+
     for num in nums:
         # Add num to all existing subsets
         new_subsets = [subset + [num] for subset in result]
         result.extend(new_subsets)
-    
+
     return result
 
 
